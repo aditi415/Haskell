@@ -1,0 +1,10 @@
+main :: IO ()
+main = do
+    putStrLn "Enter first decimal number:"
+    input1 <- getLine
+    putStrLn "Enter second decimal number:"
+    input2 <- getLine
+    let num1 = read input1 :: Double
+    let num2 = read input2 :: Double
+    let sum = num1 + num2
+    putStrLn ("The sum is: " ++ show sum)
