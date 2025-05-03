@@ -1,0 +1,21 @@
+-- SimpleFibonacci.hs
+
+-- Recursive function to calculate nth Fibonacci number
+fib :: Int -> Int
+fib 0 = 0
+fib 1 = 1
+fib n = fib (n - 1) + fib (n - 2)
+
+-- Function to generate list of first n Fibonacci numbers
+fibonacciList :: Int -> [Int]
+fibonacciList n = [fib i | i <- [0..(n-1)]]
+
+-- Main function
+main :: IO ()
+main = do
+    putStrLn "Enter how many Fibonacci numbers to generate (n >= 20):"
+    input <- getLine
+    let n = read input :: Int
+    if n >= 20
+        then print (fibonacciList n)
+        else putStrLn "Please enter a number >= 20."
