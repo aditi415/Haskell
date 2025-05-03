@@ -1,0 +1,11 @@
+-- GCDStatic.hs
+
+myGCD :: Int -> Int -> Int
+myGCD a 0 = a
+myGCD a b = myGCD b (a `mod` b)
+
+main :: IO ()
+main = do
+    let a = 48
+        b = 18
+    putStrLn ("GCD of " ++ show a ++ " and " ++ show b ++ " is " ++ show (myGCD a b))
