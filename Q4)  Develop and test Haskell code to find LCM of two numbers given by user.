@@ -1,0 +1,11 @@
+
+main :: IO ()
+main = do
+    putStrLn "Enter the first number:"
+    input1 <- getLine
+    putStrLn "Enter the second number:"
+    input2 <- getLine
+    let num1 = read input1 :: Integer
+        num2 = read input2 :: Integer
+        result = lcm num1 num2
+    putStrLn $ "LCM of " ++ show num1 ++ " and " ++ show num2 ++ " is " ++ show result
