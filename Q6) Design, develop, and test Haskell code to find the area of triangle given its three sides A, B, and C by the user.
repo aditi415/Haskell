@@ -1,0 +1,19 @@
+main :: IO ()
+main = do
+    putStrLn "Enter side a:"
+    aStr <- getLine
+    putStrLn "Enter side b:"
+    bStr <- getLine
+    putStrLn "Enter side c:"
+    cStr <- getLine
+
+    let a = read aStr :: Double
+        b = read bStr :: Double
+        c = read cStr :: Double
+        s = (a + b + c) / 2
+        area = sqrt (s * (s - a) * (s - b) * (s - c))
+
+    if a + b > c && a + c > b && b + c > a then
+        putStrLn ("Area of the triangle is " ++ show area)
+    else
+        putStrLn "Invalid triangle sides."
