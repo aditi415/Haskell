@@ -1,0 +1,24 @@
+import Prelude
+
+main :: IO ()
+main = do
+    putStrLn "Enter side a:"
+    aStr <- getLine
+    putStrLn "Enter side b:"
+    bStr <- getLine
+    putStrLn "Enter side c:"
+    cStr <- getLine
+
+    let a = read aStr :: Double
+        b = read bStr :: Double
+        c = read cStr :: Double
+
+    if a + b > c && a + c > b && b + c > a then do
+        let angleA = acos ((b^2 + c^2 - a^2) / (2*b*c)) * 180 / pi
+            angleB = acos ((a^2 + c^2 - b^2) / (2*a*c)) * 180 / pi
+            angleC = acos ((a^2 + b^2 - c^2) / (2*a*b)) * 180 / pi
+        putStrLn ("Angle A: " ++ show angleA ++ " degrees")
+        putStrLn ("Angle B: " ++ show angleB ++ " degrees")
+        putStrLn ("Angle C: " ++ show angleC ++ " degrees")
+    else
+        putStrLn "Invalid triangle sides."
