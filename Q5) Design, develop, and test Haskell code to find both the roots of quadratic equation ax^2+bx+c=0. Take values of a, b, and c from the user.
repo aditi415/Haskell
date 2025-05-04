@@ -1,0 +1,27 @@
+main :: IO ()
+main = do
+    putStrLn "Enter a:"
+    aStr <- getLine
+    putStrLn "Enter b:"
+    bStr <- getLine
+    putStrLn "Enter c:"
+    cStr <- getLine
+
+    let a = read aStr :: Double
+        b = read bStr :: Double
+        c = read cStr :: Double
+        d = b*b - 4*a*c
+
+    if a == 0 then
+        putStrLn "Not a quadratic equation."
+    else if d > 0 then do
+        let r1 = (-b + sqrt d) / (2*a)
+            r2 = (-b - sqrt d) / (2*a)
+        putStrLn $ "Two real roots: " ++ show r1 ++ " and " ++ show r2
+    else if d == 0 then do
+        let r = -b / (2*a)
+        putStrLn $ "One real root: " ++ show r
+    else do
+        let real = -b / (2*a)
+            imag = sqrt (-d) / (2*a)
+        putStrLn $ "Complex roots: " ++ show real ++ " + " ++ show imag ++ "i and " ++ show real ++ " - " ++ show imag ++ "i"
