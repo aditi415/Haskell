@@ -1,4 +1,4 @@
--- GCDStatic.hs
+-- GCD.hs
 
 myGCD :: Int -> Int -> Int
 myGCD a 0 = a
@@ -6,6 +6,10 @@ myGCD a b = myGCD b (a `mod` b)
 
 main :: IO ()
 main = do
-    let a = 48
-        b = 18
+    putStrLn "Enter first number:"
+    input1 <- getLine
+    putStrLn "Enter second number:"
+    input2 <- getLine
+    let a = read input1 :: Int
+        b = read input2 :: Int
     putStrLn ("GCD of " ++ show a ++ " and " ++ show b ++ " is " ++ show (myGCD a b))
