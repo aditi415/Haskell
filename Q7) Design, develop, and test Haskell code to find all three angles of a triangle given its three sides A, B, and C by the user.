@@ -1,4 +1,4 @@
-import Prelude
+import Predule
 
 main :: IO ()
 main = do
