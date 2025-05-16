@@ -1,4 +1,3 @@
-
 -- MixedRational.hs
 
 import Data.Ratio (numerator, denominator, (%))
