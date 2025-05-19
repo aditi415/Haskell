@@ -7,4 +7,4 @@ main do
     let b = 7
     let result = addnumbers a b
     putStrLn ("Addition of numbers is:" ++ show result)
-       
+    
