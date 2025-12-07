@@ -1,10 +1,8 @@
--- MixedRational.hs
 
 import Data.Ratio (numerator, denominator, (%))
 import Data.Function (on)
 import Control.Monad (when)
 
--- Function to convert a positive number to mixed rational form
 convertToMixedRational :: Double -> (Integer, Integer, Integer)
 convertToMixedRational x
     | x <= 0    = error "Number must be positive"
@@ -15,7 +13,6 @@ convertToMixedRational x
             b         = denominator r
         in (i, a, b)
 
--- Main function to test the code
 main :: IO ()
 main = do
     putStrLn "Enter a positive number:"
